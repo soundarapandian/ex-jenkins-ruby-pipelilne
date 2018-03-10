@@ -10,7 +10,7 @@ pipeline {
           steps {
 
               checkout([$class: 'GitSCM',
-                  branches: [[name: "*/master"]],
+                  branches: [[name: ":^(?!(.*/(deploy|meta-deploy|v\d\d\d\d)))$"]],
                   doGenerateSubmoduleConfigurations: false,
                   userRemoteConfigs: [[ url: 'https://github.com/soundarapandian/ex-ruby-jenkins-build.git', permissions: 'READABLE']]])
           }
