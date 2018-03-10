@@ -2,7 +2,7 @@ pipeline {
   agent { label 'ruby' }
 
   triggers {
-    pollSCM('H/5 * * * *')
+    pollSCM('* * * * *')
   }
 
   stages {
