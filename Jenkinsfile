@@ -8,9 +8,8 @@ pipeline {
   stages {
       stage('Checkout') {
           steps {
-
               checkout([$class: 'GitSCM',
-                  branches: [[name: ":^(?!(.*/(deploy|meta-deploy|v\d\d\d\d)))$"]],
+                  branches: [[name: ':^(?!(.*/(deploy|meta-deploy)))$']],
                   doGenerateSubmoduleConfigurations: false,
                   userRemoteConfigs: [[ url: 'https://github.com/soundarapandian/ex-ruby-jenkins-build.git', permissions: 'READABLE']]])
           }
